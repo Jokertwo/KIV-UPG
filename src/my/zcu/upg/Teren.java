@@ -27,9 +27,6 @@ public class Teren {
 	public void setMatice(MaticeTerenu matice){
 		this.matice = matice;
 	}
-	public void tisk(){
-		System.out.println(matice.getSirka());
-	}
 	public BufferedImage getTeren(){
 		return image;
 	}

@@ -9,11 +9,7 @@ import javax.swing.JFrame;
 */
 public class Spust extends JFrame{
 	private static String jmeno = null;
-	/**
-	 * 
-	 */
-	
-	
+		
 	private static final long serialVersionUID = 1L;
 
 	public static void main(String[] args) {
