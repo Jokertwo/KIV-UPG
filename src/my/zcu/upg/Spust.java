@@ -1,3 +1,4 @@
+package my.zcu.upg;
 import javax.swing.JFrame;
 /**
 @author Petr Lastovka

@@ -1,3 +1,4 @@
+package my.zcu.upg;
 import java.util.ArrayList;
 
 import org.jfree.chart.ChartFactory;

@@ -1,3 +1,4 @@
+package my.zcu.upg;
 
 
 	import java.awt.image.BufferedImage;
