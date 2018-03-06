@@ -28,14 +28,12 @@ public class OknoStrelba extends JFrame {
             rychVetru, sipkaVetru, smer, InfoOzasahu;
     private int sirkatextField = 5;
     private Strelba str;
-    private JFrame okno;
     private Graphics2D bgGraph;
 
 
     public OknoStrelba(String jmenoSouboru) throws IOException {
         str = new Strelba(jmenoSouboru);
-        okno = new JFrame();
-
+        
         JPanel panel = new JPanel();
         JPanel panelTop = new JPanel();
         JPanel panelLeft = new JPanel();
@@ -95,7 +93,7 @@ public class OknoStrelba extends JFrame {
                 vzdKcili.setText("Cil byl zasazen.");
                 panelTop.add(vzdKcili);
             }
-            okno.repaint();
+            repaint();
         });
         panel.add(vystrel);
         // nastavi barvu dolniho panelu
@@ -108,7 +106,7 @@ public class OknoStrelba extends JFrame {
         reset = new JButton("zpet");
         reset.addActionListener(event -> {
             new HlavniOkno(jmenoSouboru);
-            okno.setVisible(false);
+            setVisible(false);
         });
 
         panelTop.add(reset);
@@ -153,20 +151,20 @@ public class OknoStrelba extends JFrame {
         teren = new JLabel(new ImageIcon(str.teren()));
         panelCentr.add(teren);
 
-        okno.getContentPane().add(panel, BorderLayout.SOUTH);
-        okno.getContentPane().add(panelTop, BorderLayout.NORTH);
-        okno.getContentPane().add(panelLeft, BorderLayout.WEST);
-        okno.getContentPane().add(panelCentr, BorderLayout.CENTER);
+        getContentPane().add(panel, BorderLayout.SOUTH);
+        getContentPane().add(panelTop, BorderLayout.NORTH);
+        getContentPane().add(panelLeft, BorderLayout.WEST);
+        getContentPane().add(panelCentr, BorderLayout.CENTER);
 
         // nastavavuje velikost okna
-        okno.setSize(800, 600);
+        setSize(800, 600);
 
         // nastavi okno doprostred obrazovky
-        okno.setLocationRelativeTo(null);
-        okno.setVisible(true);
+        setLocationRelativeTo(null);
+        setVisible(true);
 
         // ukonci program po zavreni okna
-        okno.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
     }
 
