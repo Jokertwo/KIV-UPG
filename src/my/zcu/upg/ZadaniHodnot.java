@@ -1,4 +1,5 @@
 package my.zcu.upg;
+
 import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
@@ -33,15 +34,16 @@ public class ZadaniHodnot {
         vzdHracu();
         // vytvori instanci tridy Trajektorie
         trajektorie();
-        
+
         vytvorTer();
-        
+
         // vytvori instanci tridy KresleniPlochy
         obr = new KresleniPlochy(velikostDopadu, ter.getTeren());
         // preda tride KresleniPlochy informace o vetru(sila a smer)
         setVitr();
     }
-    
+
+
     public void matice(MaticeTerenu nove) {
         this.nove = nove;
     }

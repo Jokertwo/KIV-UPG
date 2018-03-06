@@ -1,4 +1,5 @@
 package my.zcu.upg;
+
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.FlowLayout;
@@ -47,7 +48,7 @@ public class HlavniOkno extends JFrame {
         JButton vizu = new JButton("Vizualizace");
         vizu.addActionListener(event -> {
             try {
-                 new OknoGrafu(jmeno);
+                new OknoGrafu(jmeno);
             } catch (Exception e) {
                 // TODO Auto-generated catch block
                 e.printStackTrace();

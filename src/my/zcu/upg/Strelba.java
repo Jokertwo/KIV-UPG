@@ -11,7 +11,7 @@ public class Strelba {
 
     public Strelba(String jmeno) throws IOException {
         hod = new ZadaniHodnot(jmeno, meritko);
-     // vytvori bitmapu terenu a ulozi ji do pameti
+        // vytvori bitmapu terenu a ulozi ji do pameti
         hod.vytvorTer();
     }
 
