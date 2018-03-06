@@ -32,8 +32,8 @@ public class OknoStrelba extends JFrame {
     private Graphics2D bgGraph;
 
 
-    public OknoStrelba(String jmeno) throws IOException {
-        str = new Strelba(jmeno);
+    public OknoStrelba(String jmenoSouboru) throws IOException {
+        str = new Strelba(jmenoSouboru);
         okno = new JFrame();
 
         JPanel panel = new JPanel();
@@ -107,8 +107,7 @@ public class OknoStrelba extends JFrame {
         panelTop.add(vzdKcili);
         reset = new JButton("zpet");
         reset.addActionListener(event -> {
-            HlavniOkno nov = new HlavniOkno();
-            nov.setJmeno(jmeno);
+            new HlavniOkno(jmenoSouboru);
             okno.setVisible(false);
         });
 

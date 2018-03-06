@@ -2,7 +2,6 @@ package my.zcu.upg;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
-import java.awt.FlowLayout;
 import java.io.IOException;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -12,20 +11,15 @@ import javax.swing.JPanel;
 
 public class HlavniOkno extends JFrame {
 
-    public void setJmeno(String jmeno) {
-        this.jmeno = jmeno;
-    }
+    private final static String VIZUALIZACE = "<html> Pro zobrazeni grafu stiskni <font color = green>Vizualizace</font></html>";
+    private final static String GRAF = "<html>Pro generovani terenu,zobrazeni mapy<br> a strelbu "
+            + "stisni <font color = green>Strela</font></html>";
 
     private static final long serialVersionUID = 1L;
 
-    JFrame frame = new JFrame();
-    JPanel panel = new JPanel();
-    JPanel pravy = new JPanel();
-    JPanel levy = new JPanel();
-    JLabel pravyt = new JLabel();
-    JLabel levyt = new JLabel();
+    private JPanel panel = new JPanel();
 
-    public String jmeno;
+    private String jmenoSouboru;
 
 
     public JButton tlStrelba() {
@@ -33,12 +27,12 @@ public class HlavniOkno extends JFrame {
         strelba.addActionListener(event -> {
 
             try {
-                OknoStrelba ap = new OknoStrelba(jmeno);
+                new OknoStrelba(jmenoSouboru);
             } catch (IOException e1) {
                 // TODO Auto-generated catch block
                 e1.printStackTrace();
             }
-            VisibleOff();
+            setVisible(false);
         });
         return strelba;
     }
@@ -48,59 +42,47 @@ public class HlavniOkno extends JFrame {
         JButton vizu = new JButton("Vizualizace");
         vizu.addActionListener(event -> {
             try {
-                new OknoGrafu(jmeno);
+                new OknoGrafu(jmenoSouboru);
             } catch (Exception e) {
                 // TODO Auto-generated catch block
                 e.printStackTrace();
             }
 
-            VisibleOff();
+            setVisible(false);
 
         });
         return vizu;
     }
 
 
-    public HlavniOkno() {
-        FlowLayout cent = new FlowLayout();
-        FlowLayout pr = new FlowLayout();
-        FlowLayout lv = new FlowLayout();
+    private JPanel createPanel(String text) {
+        JPanel panel = new JPanel();
+        panel.setBackground(Color.WHITE);
+        JLabel label = new JLabel();
+        label.setText(text);
+        panel.add(label);
+        return panel;
+    }
 
         pravy.setLayout(pr);
         pravyt.setText("<html>Pro generovani terenu,zobrazeni mapy<br> a strelbu "
                 + "stisni <font color = green>Strela</font></html>");
-        pravy.add(pravyt);
-        pravy.setBackground(Color.WHITE);
 
-        levy.setLayout(lv);
-        levyt.setText("<html> Pro zobrazeni grafu stiskni <font color = green>Vizualizace</font></html>");
-        levy.add(levyt);
-        levy.setBackground(Color.WHITE);
+    public HlavniOkno(String jmenoSouboru) {
+        this.jmenoSouboru = jmenoSouboru;
 
-        panel.setLayout(cent);
         panel.add(tlStrelba());
         panel.add(tlVizu());
         panel.setBackground(Color.RED);
 
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setResizable(false);
-        frame.setVisible(true);
-        frame.getContentPane().add(panel, BorderLayout.CENTER);
-        frame.getContentPane().add(pravy, BorderLayout.WEST);
-        frame.getContentPane().add(levy, BorderLayout.EAST);
-        frame.pack();
-        frame.setLocationRelativeTo(null);
-
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setVisible(true);
+        setSize(600, 200);
+        getContentPane().add(panel, BorderLayout.CENTER);
+        getContentPane().add(createPanel(GRAF), BorderLayout.WEST);
+        getContentPane().add(createPanel(VIZUALIZACE), BorderLayout.EAST);
+        setTitle("UPG-Semetralni prace 2016");
+        setLocationRelativeTo(null);
+        pack();
     }
-
-
-    public void VisibleOff() {
-        frame.setVisible(false);
-    }
-
-
-    public void VisibleON() {
-        frame.setVisible(true);
-    }
-
 }

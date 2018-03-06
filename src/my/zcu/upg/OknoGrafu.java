@@ -97,8 +97,7 @@ public class OknoGrafu {
         // pridava tlacitko pro vyresetovani hry a noveho spusteni
         reset = new JButton("zpet");
         reset.addActionListener(event -> {
-            HlavniOkno nov = new HlavniOkno();
-            nov.setJmeno(jmeno);
+            new HlavniOkno(jmeno);
             okno.setVisible(false);
 
         });
