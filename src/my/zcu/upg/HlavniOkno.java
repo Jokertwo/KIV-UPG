@@ -64,9 +64,6 @@ public class HlavniOkno extends JFrame {
         return panel;
     }
 
-        pravy.setLayout(pr);
-        pravyt.setText("<html>Pro generovani terenu,zobrazeni mapy<br> a strelbu "
-                + "stisni <font color = green>Strela</font></html>");
 
     public HlavniOkno(String jmenoSouboru) {
         this.jmenoSouboru = jmenoSouboru;
