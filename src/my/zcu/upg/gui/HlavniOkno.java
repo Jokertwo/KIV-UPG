@@ -1,4 +1,4 @@
-package my.zcu.upg;
+package my.zcu.upg.gui;
 
 import java.awt.Color;
 import java.io.IOException;
@@ -6,6 +6,8 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import my.zcu.upg.OknoGrafu;
+import my.zcu.upg.OknoStrelba;
 import net.miginfocom.swing.MigLayout;
 
 
@@ -24,21 +26,19 @@ public class HlavniOkno extends JFrame {
 
     public HlavniOkno(String jmenoSouboru) {
         this.jmenoSouboru = jmenoSouboru;
+
         panel.setLayout(new MigLayout());
-        panel.add(tlStrelba(),"grow,push");
-        panel.add(tlVizualizace(),"grow,push");
-//        panel.setBackground(Color.RED);
-        
+        panel.add(tlStrelba(), "grow,push");
+        panel.add(tlVizualizace(), "grow,push");
 
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setVisible(true);
         setSize(600, 200);
         setLayout(new MigLayout());
-        add(createPanel(GRAF),"grow,push");
-        add(createPanel(VIZUALIZACE),"grow,push,wrap");
-        add(panel,"grow,push,span 2");
-//        add(tlStrelba(),"grow,push");
-//        add(tlVizualizace(),"grow,push");
+        add(createPanel(GRAF), "grow,push");
+        add(createPanel(VIZUALIZACE), "grow,push,wrap");
+        add(panel, "grow,push,span 2");
+
         setTitle("UPG-Semetralni prace 2016");
         setLocationRelativeTo(null);
         pack();

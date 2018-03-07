@@ -11,6 +11,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import my.zcu.upg.gui.HlavniOkno;
 
 
 public class OknoGrafu {

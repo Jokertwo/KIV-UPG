@@ -1,5 +1,7 @@
 package my.zcu.upg;
 
+import my.zcu.upg.gui.HlavniOkno;
+
 /**
  * @author Petr Lastovka
  * @author A15B0055K
