@@ -1,5 +1,9 @@
 package my.zcu.upg;
 
-public class Strelba {
+public interface Strelba {
+    
+    
+    
+    
 
 }

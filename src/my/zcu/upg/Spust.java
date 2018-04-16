@@ -1,6 +1,8 @@
 package my.zcu.upg;
 
+import javax.swing.SwingUtilities;
 import my.zcu.upg.gui.HlavniOkno;
+
 
 /**
  * @author Petr Lastovka
@@ -15,7 +17,14 @@ public class Spust {
     public static void main(String[] args) {
 
         jmenoSouboru = args.length == 0 ? "ter/terrain512x512_300_600.ter" : args[0];
-        new HlavniOkno(jmenoSouboru);
+        SwingUtilities.invokeLater(new Runnable() {
+
+            @Override
+            public void run() {
+                new HlavniOkno(jmenoSouboru);
+
+            }
+        });
 
     }
 

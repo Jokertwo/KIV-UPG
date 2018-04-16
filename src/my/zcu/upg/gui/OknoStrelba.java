@@ -1,4 +1,4 @@
-package my.zcu.upg;
+package my.zcu.upg.gui;
 
 import java.awt.Graphics2D;
 import java.awt.TextField;
@@ -10,10 +10,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import my.zcu.upg.gui.GameInfo;
-import my.zcu.upg.gui.HlavniOkno;
-import my.zcu.upg.gui.InfoPanel;
-import my.zcu.upg.gui.Ovladani;
+import my.zcu.upg.StrelbaBalistic;
 import net.miginfocom.swing.MigLayout;
 
 
@@ -41,7 +38,7 @@ public class OknoStrelba extends JFrame {
         infoPanel.setNewDistance(str.vzdaKcili());
 
         reset = new JButton("zpet");
-        reset.addActionListener(event -> {
+        reset.addActionListener(e -> {
             new HlavniOkno(jmenoSouboru);
             setVisible(false);
         });

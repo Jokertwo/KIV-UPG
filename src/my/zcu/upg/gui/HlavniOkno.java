@@ -7,7 +7,6 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import my.zcu.upg.OknoGrafu;
-import my.zcu.upg.OknoStrelba;
 import net.miginfocom.swing.MigLayout;
 
 
